@@ -6,9 +6,10 @@ const PORT = process.env.PORT || 5000;
 
 const app = express();
 
+app.use(cors());
+
 app.use(express.json());
 app.use("", dataRouter);
-app.use(cors());
 
 app.listen(PORT, () => {
     console.log(`Server is up and running on port ${PORT}`);
